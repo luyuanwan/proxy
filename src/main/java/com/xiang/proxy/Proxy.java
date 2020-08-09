@@ -14,7 +14,7 @@ import io.netty.handler.logging.LoggingHandler;
  */
 public class Proxy {
 
-    static final int PORT = 8080;
+    static final int PORT = 80;
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -32,6 +32,7 @@ public class Proxy {
             Channel ch = b.bind(PORT).sync().channel();
 
             System.err.println("Open your web browser and navigate to http://127.0.0.1:" + PORT + "/");
+            System.err.println(Context.getHomePage());
             ch.closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();
