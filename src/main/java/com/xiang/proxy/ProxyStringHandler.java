@@ -35,11 +35,11 @@ public class ProxyStringHandler extends SimpleChannelInboundHandler<FullHttpRequ
        modifyItemMap = new HashMap<>();
        //modifyItemMap.put(OrderInfo.modify().getUrl(), OrderInfo.modify());
        //收入流水
-       modifyItemMap.put(LiushuiItem.modify().getUrl(),LiushuiItem.modify());
+       //modifyItemMap.put(LiushuiItem.modify().getUrl(),LiushuiItem.modify());
        //订单菜单
-       modifyItemMap.put(MenutItem.orderModify().getUrl(), MenutItem.orderModify());
+       //modifyItemMap.put(MenutItem.orderModify().getUrl(), MenutItem.orderModify());
        //财务菜单
-       modifyItemMap.put(MenutItem.caiwuModify().getUrl(),MenutItem.caiwuModify());
+       //modifyItemMap.put(MenutItem.caiwuModify().getUrl(),MenutItem.caiwuModify());
    }
 
     @Override
@@ -127,11 +127,12 @@ public class ProxyStringHandler extends SimpleChannelInboundHandler<FullHttpRequ
     }
 
     private String getCookie(String msg,String uri){
-        if("/auth-server/login/login".equals(uri)){
-            Cookie cookie = JSON.parseObject(msg,Cookie.class);
-            return cookie.getData();
-        }
-        return null;
+//        if("/auth-server/login/login".equals(uri)){
+//            Cookie cookie = JSON.parseObject(msg,Cookie.class);
+//            return cookie.getData();
+//        }
+//        return null;
+        return "5aa9afab56564819857ee233642eb466";
     }
 
     @Data
@@ -152,6 +153,8 @@ public class ProxyStringHandler extends SimpleChannelInboundHandler<FullHttpRequ
             }
         }
 
+        /**
+         * 有哪些系统
         if(uri.equalsIgnoreCase("/auth-server/AcUserLogicSystem/getOwnLogicSystems")){
             //含配置中心
             String msg = "{\"message\":\"success\",\"code\":200,\"data\":[{\"id\":7,\"logicSystemName\":\"订单系统\",\"logicSystemUrl\":\"#\",\"personInCharge\":\"admin\",\"logicSystemKey\":\"736cdfe8de344164a38bc435f1fd08b0\",\"logicSystemSecretKey\":null,\"iconCode\":\"12\",\"showOrder\":1,\"frozenStatus\":0,\"delFlag\":0,\"createTime\":\"2018-10-26\",\"updateTime\":\"2019-09-30\",\"keyWord\":null,\"relationId\":null},{\"id\":6,\"logicSystemName\":\"配置中心\",\"logicSystemUrl\":\"#\",\"personInCharge\":\"admin\",\"logicSystemKey\":\"370e3269b70245958e7801c1291dbb39\",\"logicSystemSecretKey\":null,\"iconCode\":\"\",\"showOrder\":5,\"frozenStatus\":0,\"delFlag\":0,\"createTime\":\"2018-10-25\",\"updateTime\":\"2018-10-25\",\"keyWord\":null,\"relationId\":null},{\"id\":15,\"logicSystemName\":\"财务系统\",\"logicSystemUrl\":\"#\",\"personInCharge\":\"admin\",\"logicSystemKey\":\"317a86e7f11d448e9a73077ad51815e3\",\"logicSystemSecretKey\":null,\"iconCode\":\"setting\",\"showOrder\":8,\"frozenStatus\":0,\"delFlag\":0,\"createTime\":\"2019-03-14\",\"updateTime\":\"2019-10-09\",\"keyWord\":null,\"relationId\":null},{\"id\":17,\"logicSystemName\":\"营销系统\",\"logicSystemUrl\":\"#\",\"personInCharge\":\"admin\",\"logicSystemKey\":\"dd00a5a2b87149989b598c47391c8891\",\"logicSystemSecretKey\":null,\"iconCode\":\"shopping-cart\",\"showOrder\":9,\"frozenStatus\":0,\"delFlag\":0,\"createTime\":\"2019-03-15\",\"updateTime\":\"2019-09-30\",\"keyWord\":null,\"relationId\":null},{\"id\":19,\"logicSystemName\":\"用户系统\",\"logicSystemUrl\":\"#\",\"personInCharge\":\"admin\",\"logicSystemKey\":\"5f15cbda873c4960bb4157abfadce5f7\",\"logicSystemSecretKey\":null,\"iconCode\":\"user\",\"showOrder\":11,\"frozenStatus\":0,\"delFlag\":0,\"createTime\":\"2019-03-21\",\"updateTime\":\"2019-09-30\",\"keyWord\":null,\"relationId\":null}],\"success\":true}";
@@ -161,6 +164,8 @@ public class ProxyStringHandler extends SimpleChannelInboundHandler<FullHttpRequ
             doFlush(ctx,request,TEXT_HTML,msg);
             return ;
         }
+
+         **/
 
 
 
